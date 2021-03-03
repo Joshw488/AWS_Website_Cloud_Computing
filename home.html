@@ -1,0 +1,32 @@
+<h2>Watts Program 4</h2>
+<label>Press the Load button to populate the dynamodb from the file located at AWS input.txt and save the file to an s3 bucket located <a href="https://css436program4storage.s3-us-west-2.amazonaws.com/input.txt">https://css436program4storage.s3-us-west-2.amazonaws.com/input.txt</a>.</label>
+<br>
+<label>Press the Clear button to delete the contents of dynamodb and the S3 bucket. NOTE: This process may take about 30 seconds while the database is being manipulated to avoid inconsistencies.</label>
+<br>
+<label>Press the Query button to search for the name provided in the two name boxes and display the items retrieved.</label>
+<br>
+
+
+<form action="/load_form" method="POST">
+    <button name="loadButton" type="submit">Load</button>
+</form>
+
+<form action="/clear_form" method="POST">
+    <button onClick="alert('Clearing may take 30 seconds, please click OK and wait')" name="clearButton" type="submit">Clear</button>
+</form>
+
+<form action="/query_form" method="POST">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <button name="queryButton" type="submit">Query</button>
+</form>
+
+<label>Output:</label>
+<br>
+<span style="white-space: pre-line">{{run_message}}</span>
+
+<footer>
+	<p>&copy; 2020 - CSS436 - Watts Program 4</p>
+</footer>
